@@ -3,7 +3,7 @@ from curses.ascii import isalpha
 
 
 def main():
-    inp_ = 'Tact Coa'
+    inp_ = "Tact Coa"
     # inp_ = 'So patient a nurse to nurse a patient so'
     # inp_ = 'aabb!'
     print(pal_perm(inp_))
@@ -14,7 +14,7 @@ def pal_perm(s: str):
     allowed_non_even = 0 if allowed_chars % 2 == 0 else 1
     # breakpoint()
     for _, v in char_count_dict.items():
-        if v%2 != 0:
+        if v % 2 != 0:
             if allowed_non_even == 0:
                 return False
             allowed_non_even -= 1
@@ -49,7 +49,7 @@ class Test(unittest.TestCase):
         ("Not a Palindrome", False),
         ("no x in nixon", True),
         ("azAZ", True),
-        ("bab!!!", True)
+        ("bab!!!", True),
     ]
 
     def test_pal_perm(self):
@@ -57,6 +57,5 @@ class Test(unittest.TestCase):
             self.assertEqual(expected, pal_perm(s), msg=f"failed at {s}")
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

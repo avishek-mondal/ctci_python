@@ -1,6 +1,11 @@
 def main():
-    tests = [('pale', 'ple'), ('pales', 'pale'), ('pale', 'bale'),
-             ('pale', 'bake'), ('relly long', 'short boi')]
+    tests = [
+        ("pale", "ple"),
+        ("pales", "pale"),
+        ("pale", "bale"),
+        ("pale", "bake"),
+        ("relly long", "short boi"),
+    ]
     for str1, str2 in tests:
         print(one_away(str1, str2))
 

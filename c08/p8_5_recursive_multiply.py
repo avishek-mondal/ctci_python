@@ -51,6 +51,7 @@ def recursive_mul_handle_odd_helper(smaller, bigger):
         # odd case
         return half_prod + half_prod + bigger
 
+
 class RecursiveMultiplyTest(unittest.TestCase):
     def setUp(self) -> None:
         self.test_cases = [(3, 4), (5, 6), (234, 391), (33243, 23)]

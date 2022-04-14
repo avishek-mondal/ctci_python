@@ -6,7 +6,7 @@ class ExtendedNode:
         self.right: ExtendedNode = None
 
     def insert_in_order(self, data):
-        if (data <= self.data):
+        if data <= self.data:
             if not self.left:
                 self.left = ExtendedNode(data)
             else:
@@ -19,7 +19,7 @@ class ExtendedNode:
 
         self.size += 1
 
-    def find(self, data) -> 'ExtendedNode':
+    def find(self, data) -> "ExtendedNode":
         if data == self.data:
             return self
         elif data < self.data:

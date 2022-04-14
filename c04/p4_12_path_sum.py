@@ -1,6 +1,6 @@
+import tlog
 from c04.construct_tree import construct_tree_with_parent, create_node_arr
 from c04.node import Node
-import tlog
 
 
 def main():
@@ -36,13 +36,18 @@ def _count_sum_paths(root: Node, target: int, running_total: int, table: dict):
     increment_table(table, running_total, -1)
 
     if running_total == target:
-        tlog.info(f"node = {root}, table = {table}, left_total={left_total}, right_total={right_total}")
+        tlog.info(
+            f"node = {root}, table = {table}, left_total={left_total}, right_total={right_total}"
+        )
         total += 1
 
     total += left_total + right_total
     if total != 0:
-        tlog.info(f"node = {root}, table = {table}, total = {total}, left_total={left_total}, right_total={right_total}, running_total = {running_total}")
+        tlog.info(
+            f"node = {root}, table = {table}, total = {total}, left_total={left_total}, right_total={right_total}, running_total = {running_total}"
+        )
     return total
+
 
 def increment_table(table: dict, key, delta):
     # tlog.info(f"table before = {table}, key = {key}, delta = {delta}")
@@ -54,6 +59,7 @@ def increment_table(table: dict, key, delta):
         table[key] = new_count
     # tlog.info(f"table after = {table}, key = {key}")
 
+
 def count_sum_paths_bf(root, target):
     if root is None:
         return 0
@@ -63,6 +69,7 @@ def count_sum_paths_bf(root, target):
     left_path = count_sum_paths_bf(root.left, target)
 
     return paths_from_root + right_path + left_path
+
 
 def count_paths_from_root(root, target, cur_sum):
     if not root:

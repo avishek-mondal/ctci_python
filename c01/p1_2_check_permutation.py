@@ -4,6 +4,7 @@ import unittest
 def main():
     print(check_permutation("dog", "god"))
 
+
 def check_permutation(str1: str, str2: str) -> bool:
     str1_dict = get_str_dict(str1)
     str2_dict = get_str_dict(str2)
@@ -16,7 +17,8 @@ def check_permutation(str1: str, str2: str) -> bool:
         if k not in str1_dict:
             return False
     return True
-    
+
+
 def get_str_dict(str_: str) -> dict:
     str_dict = dict()
     for ch in str_:
@@ -45,5 +47,5 @@ class CheckPermutationTests(unittest.TestCase):
             self.assertEqual(is_perm, check_permutation(str1, str2))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

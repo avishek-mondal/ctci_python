@@ -18,6 +18,7 @@ def partition(ll: LinkedList, k: int):
     ll.head = start
     ll.tail = end
 
+
 def main():
     vals = [10, 10, 10, 10, 10, 0, 0, 0, 0, 0]
     ll = LinkedList(vals)

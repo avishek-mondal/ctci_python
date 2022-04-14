@@ -27,10 +27,10 @@ def main():
     min_stack.push(7)
     assert min_stack.get_min() == 3
     val = min_stack.pop()
-    print(f'popped {val}')
+    print(f"popped {val}")
     assert val == 7
     assert min_stack.get_min() == 3
     val = min_stack.pop()
-    print(f'popped {val}')
+    print(f"popped {val}")
     assert val == 3
     assert min_stack.get_min() == 5

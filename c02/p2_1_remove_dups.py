@@ -9,6 +9,7 @@ def main():
     new_ll = remove_dupes_no_small_mem(ll)
     print(new_ll)
 
+
 def remove_dupes_no_small_mem(ll: LinkedList):
     current = ll.head
     while current:
@@ -20,7 +21,7 @@ def remove_dupes_no_small_mem(ll: LinkedList):
                 runner = runner.next_node
         current = current.next_node
     return ll
-    
+
 
 def remove_dupes(ll: LinkedList):
     previous = LinkedListNode(0, next_node=ll.head)

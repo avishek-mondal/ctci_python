@@ -1,7 +1,7 @@
-from random import randint
-import tlog
-
 import typing as ty
+from random import randint
+
+import tlog
 
 
 class PartitionResult:
@@ -106,6 +106,7 @@ def partition_no_dups(arr: ty.List, left: int, right: int, pivot: int):
             right -= 1
     left_end = left - 1
     return left_end
+
 
 def swap(arr, left, right):
     arr[left], arr[right] = arr[right], arr[left]

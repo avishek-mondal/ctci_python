@@ -1,7 +1,6 @@
 import typing as ty
 from collections import deque
 
-
 from c04.node import Node
 
 
@@ -10,7 +9,10 @@ def get_list_depths_dfs(root: Node) -> ty.List:
     get_list_depths_dfs_helper(root=root, lists=lists, level=0)
     return lists
 
-def get_list_depths_dfs_helper(root: Node, lists: ty.List[ty.List], level: int):
+
+def get_list_depths_dfs_helper(
+    root: Node, lists: ty.List[ty.List], level: int
+):
     if root is None:
         return
     if len(lists) == level:
@@ -19,8 +21,9 @@ def get_list_depths_dfs_helper(root: Node, lists: ty.List[ty.List], level: int):
     else:
         arr = lists[level]
     arr.append(root)
-    get_list_depths_dfs_helper(root.left, lists, level+1)
-    get_list_depths_dfs_helper(root.right, lists, level+1)
+    get_list_depths_dfs_helper(root.left, lists, level + 1)
+    get_list_depths_dfs_helper(root.right, lists, level + 1)
+
 
 def get_list_depths_bfs(root: Node) -> ty.List:
     if root is None:
@@ -72,4 +75,3 @@ def main():
         assert lists[1] == [nodes[1], nodes[2]]
         assert lists[2] == [nodes[3], nodes[4], nodes[5], nodes[6]]
         assert lists[3] == [nodes[7]]
-

@@ -1,7 +1,7 @@
-from c17.assorted_methods import generate_random_matrix, pprint_matrix
 from dataclasses import dataclass
 
 import tlog
+from c17.assorted_methods import generate_random_matrix, pprint_matrix
 
 
 @dataclass

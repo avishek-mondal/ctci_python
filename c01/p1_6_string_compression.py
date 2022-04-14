@@ -8,7 +8,7 @@ def main():
 
 def string_compression(s: str) -> str:
     if not s:
-        return ''
+        return ""
 
     n = len(s)
     compressed = []
@@ -22,7 +22,7 @@ def string_compression(s: str) -> str:
         else:
             cnt += 1
     compressed.append((ch, cnt))
-    out = ''.join([f"{char_}{cnt_}" for char_, cnt_ in compressed])
+    out = "".join([f"{char_}{cnt_}" for char_, cnt_ in compressed])
     if len(out) >= n:
         return s
     return out
@@ -43,5 +43,5 @@ class Test(unittest.TestCase):
             self.assertEqual(expected, string_compression(s))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

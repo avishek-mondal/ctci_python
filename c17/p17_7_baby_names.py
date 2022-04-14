@@ -1,6 +1,7 @@
 import typing as ty
-import tlog
 from collections import defaultdict
+
+import tlog
 
 
 def main():

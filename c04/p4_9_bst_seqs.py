@@ -1,14 +1,16 @@
 import typing as ty
+from collections import deque
+from copy import deepcopy
 
 import tlog
 from c04.construct_tree import construct_tree_with_parent, create_node_arr
 from c04.node import Node
-from collections import deque
-from copy import deepcopy
 
 
 def main():
-    node_arr = create_node_arr([50, 20, 60, 10, 25, None, 70, 5, 15, None, None, None, None, 65, 80])
+    node_arr = create_node_arr(
+        [50, 20, 60, 10, 25, None, 70, 5, 15, None, None, None, None, 65, 80]
+    )
     root = construct_tree_with_parent(node_arr)
     sequences = get_all_sequences(root)
     print(sequences)
@@ -39,7 +41,12 @@ def get_all_sequences_helper(root: Node) -> ty.Deque[ty.Deque]:
     sequences = deque([])
     for right_seq in right_sequences:
         for left_seq in left_sequences:
-            weave(right_seq, left_seq, prefix=deque([root.key]), sequences=sequences)
+            weave(
+                right_seq,
+                left_seq,
+                prefix=deque([root.key]),
+                sequences=sequences,
+            )
     return sequences
 
 

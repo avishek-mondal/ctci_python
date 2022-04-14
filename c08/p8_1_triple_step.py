@@ -1,6 +1,5 @@
 from tkinter import N
 
-
 UNFILLED_VAL = -1
 
 

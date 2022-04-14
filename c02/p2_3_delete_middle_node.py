@@ -2,7 +2,7 @@ from c02.linked_list import LinkedList, LinkedListNode
 
 
 def del_middle(node: LinkedListNode):
-    node.value=node.next_node.value
+    node.value = node.next_node.value
     node.next_node = node.next_node.next_node
 
 
@@ -13,4 +13,3 @@ def main():
     ll.add_values([8, 9, 10, 11])
     del_middle(middle_node)
     print(ll)
-    

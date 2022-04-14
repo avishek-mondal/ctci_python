@@ -8,12 +8,13 @@ class Node:
         self.above = None
         self.below = None
 
+
 class Stack:
     def __init__(self, capacity):
         self.capacity = capacity
         self.size = 0
-        self.top : Node = None
-        self.bottom : Node = None
+        self.top: Node = None
+        self.bottom: Node = None
 
     def is_full(self) -> bool:
         return self.capacity == self.size
@@ -59,7 +60,7 @@ class Stack:
 class StackSet:
     def __init__(self, stack_capacity):
         self.stack_capacity = stack_capacity
-        self.stacks : ty.List[Stack] = []
+        self.stacks: ty.List[Stack] = []
 
     def get_last_stack(self) -> Stack:
         if not self.stacks:
@@ -100,7 +101,6 @@ class StackSet:
             v = self.left_shift(idx=idx + 1, remove_top=False)
             st.push(v)
         return removed_item
-
 
 
 class Tests(unittest.TestCase):

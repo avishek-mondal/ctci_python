@@ -10,9 +10,9 @@ def main():
 
 def rotate_matrix(matrix: ty.List[ty.List]) -> ty.List[ty.List]:
     if len(matrix) != len(matrix[0]):
-        raise Exception('need a square matrix')
+        raise Exception("need a square matrix")
     n = len(matrix)
-    num_layers = math.ceil(n/2)
+    num_layers = math.ceil(n / 2)
 
     for layer in range(num_layers):
         first = layer
@@ -65,5 +65,6 @@ class Test(unittest.TestCase):
         for matrix, expected in self.test_cases:
             self.assertEqual(expected, rotate_matrix(matrix))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

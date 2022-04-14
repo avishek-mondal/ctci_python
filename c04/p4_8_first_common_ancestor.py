@@ -168,7 +168,7 @@ def _common_ancestor_no_parents_w_res(root: Node, p: Node, q: Node) -> Node:
 def common_ancestor_no_parents(root: Node, p: Node, q: Node):
     if not node_exists(root, p) or not node_exists(root, q):
         return None
-    args= locals()
+    args = locals()
     tlog.info("args", args_passed={k: str(v) for k, v in args.items()})
     tlog.info("Starting helper")
     return _common_ancestor_no_parents(root, p, q)

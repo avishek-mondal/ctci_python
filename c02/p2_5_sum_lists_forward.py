@@ -33,16 +33,17 @@ def sum_lists(ll1: LinkedList, ll2: LinkedList) -> LinkedList:
     return res
 
 
-def sum_list_helper(node1: LinkedListNode,
-                    node2: LinkedListNode) -> ty.Tuple[LinkedListNode, int]:
+def sum_list_helper(
+    node1: LinkedListNode, node2: LinkedListNode
+) -> ty.Tuple[LinkedListNode, int]:
     if node1 is None and node2 is None:
         return None, 0
 
     if node1 is None or node2 is None:
         raise ValueError("Make sure lists are same length")
-    
+
     res = LinkedListNode(0)
-    
+
     next_node, carry = sum_list_helper(node1.next_node, node2.next_node)
 
     value = carry + node1.value + node2.value

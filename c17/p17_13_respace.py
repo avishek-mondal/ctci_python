@@ -1,5 +1,5 @@
-from c17.word_set import word_set
 import tlog
+from c17.word_set import word_set
 
 
 class ParseResult:

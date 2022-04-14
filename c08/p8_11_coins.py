@@ -14,6 +14,7 @@ def make_change_2d(total, denoms):
     memo = dict()
     return make_change_2d_helper(total=total, denoms=denoms, idx=0, memo=memo)
 
+
 def make_change_2d_helper(total, denoms, idx, memo):
     if (total, idx) in memo:
         return memo[(total, idx)]
@@ -32,6 +33,7 @@ def make_change_2d_helper(total, denoms, idx, memo):
 
 def make_change_bf(total: int, denoms: ty.List):
     return make_change_bf_helper(total=total, denoms=denoms, idx=0)
+
 
 def make_change_bf_helper(total, denoms, idx):
     coin = denoms[idx]

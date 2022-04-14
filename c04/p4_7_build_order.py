@@ -1,5 +1,5 @@
-from tkinter import N
 import typing as ty
+from tkinter import N
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
         ("b", "a"),
         ("b", "h"),
         ("b", "e"),
-        ("a", "e")
+        ("a", "e"),
     ]
     print(build_order(projects, dependencies))
 
@@ -57,6 +57,7 @@ def order_projects(graph: "Graph", out: ty.List):
     graph.remove_nodes(nodes_with_no_endges)
     return order_projects(graph, out)
 
+
 class Graph:
     def __init__(self, projects):
         self.adjacency_list = {k: set() for k in projects}
@@ -65,7 +66,7 @@ class Graph:
         neighbours = self.adjacency_list.get(node, set())
         neighbours.add(neighbour)
 
-    def get_nodes_with_no_incoming_edges(self)-> ty.List:
+    def get_nodes_with_no_incoming_edges(self) -> ty.List:
         out = []
         for k, v in self.adjacency_list.items():
             if len(v) == 0:
@@ -85,4 +86,3 @@ class Graph:
     def remove_nodes(self, nodes: ty.List):
         for node in nodes:
             self.adjacency_list.pop(node)
-

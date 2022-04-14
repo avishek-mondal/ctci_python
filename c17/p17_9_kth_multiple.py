@@ -1,11 +1,13 @@
 import heapq
 from copy import deepcopy
 
+
 def main():
     factors = [3, 5, 7]
     k = 1000
     kth_mult = get_kth_multiple(k, factors)
     print(kth_mult)
+
 
 def get_kth_multiple(k, factors):
     res = []

@@ -21,6 +21,7 @@ def main():
     print(ans)
     assert expected_matrix == ans
 
+
 def zero_matrix(matrix: ty.List[ty.List[int]]) -> ty.List[ty.List[int]]:
     R = len(matrix)
     C = len(matrix[0])
@@ -36,7 +37,7 @@ def zero_matrix(matrix: ty.List[ty.List[int]]) -> ty.List[ty.List[int]]:
         if matrix[r][0] == 0:
             first_col_has_zero = True
             break
-    
+
     for r in range(1, R):
         for c in range(1, C):
             if matrix[r][c] == 0:
@@ -47,19 +48,18 @@ def zero_matrix(matrix: ty.List[ty.List[int]]) -> ty.List[ty.List[int]]:
         if matrix[r][0] == 0:
             for c in range(1, C):
                 matrix[r][c] = 0
-    
+
     for c in range(C):
         if matrix[0][c] == 0:
             for r in range(1, R):
                 matrix[r][c] = 0
-    
+
     if first_col_has_zero:
         for r in range(R):
             matrix[r][0] = 0
-    
+
     if first_row_has_zero:
         for c in range(C):
             matrix[0][c] = 0
-    
+
     return matrix
-    

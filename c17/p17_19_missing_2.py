@@ -1,6 +1,7 @@
-import random
-import tlog
 import math
+import random
+
+import tlog
 
 
 def main():

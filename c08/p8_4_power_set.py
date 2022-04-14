@@ -1,6 +1,6 @@
+import json
 import unittest
 from copy import deepcopy
-import json
 
 
 def main():

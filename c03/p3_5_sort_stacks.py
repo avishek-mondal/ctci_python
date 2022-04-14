@@ -70,5 +70,6 @@ class Tests(unittest.TestCase):
         assert queue.pop() == 3
         assert queue.pop() == 4
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

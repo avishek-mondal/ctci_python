@@ -2,10 +2,12 @@ import typing as ty
 
 
 class LinkedListNode:
-    def __init__(self,
-                 value: int,
-                 next_node: 'LinkedListNode' = None,
-                 prev_node: 'LinkedListNode' = None):
+    def __init__(
+        self,
+        value: int,
+        next_node: "LinkedListNode" = None,
+        prev_node: "LinkedListNode" = None,
+    ):
         self.value = value
         self.next_node = next_node
         self.prev_node = prev_node

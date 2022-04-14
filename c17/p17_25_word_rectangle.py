@@ -1,7 +1,8 @@
-from c17.word_set import word_set
-from c17.default_trie import Trie
 import typing as ty
 from collections import defaultdict
+
+from c17.default_trie import Trie
+from c17.word_set import word_set
 
 
 class WordGroups:

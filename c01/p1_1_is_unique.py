@@ -1,4 +1,4 @@
-def is_unique(inp:str):
+def is_unique(inp: str):
     s = set()
     for ch in inp:
         if ch in s:

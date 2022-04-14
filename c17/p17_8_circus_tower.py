@@ -57,6 +57,7 @@ def get_longest_at_idx(arr: ty.List[HtWt], solns, idx):
     best.append(val)
     return best
 
+
 def longest_increasing_seq_recursive(ht_wt: ty.List):
     ht_wt.sort(reverse=True)
     return best_seq_at_idx(ht_wt=ht_wt, res=[], idx=0)

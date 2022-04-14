@@ -13,10 +13,10 @@ def main():
 def find_volume_two_sweeps(hist):
     """Following steps:
 
-    1. Sweep left ot right, tracking the max height you've seen and setting
+    1. Sweep left to right, tracking the max height you've seen and setting
     left max
 
-    2. Sweep right to left, tracking the max height you've seen adn setting
+    2. Sweep right to left, tracking the max height you've seen and setting
     right max
 
     3. Sweep across the histogram, computing the minimum of the left max and

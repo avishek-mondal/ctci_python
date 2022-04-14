@@ -7,8 +7,10 @@ def main():
         res = get_perms(s)
         print(f"res = {res}")
         print(
-            (f"len(s) = {len(s)}, n! = {math.factorial(len(s))}, "
-             f"len(res) = {len(res)}, len(set(res))={len(set(res))} ")
+            (
+                f"len(s) = {len(s)}, n! = {math.factorial(len(s))}, "
+                f"len(res) = {len(res)}, len(set(res))={len(set(res))} "
+            )
         )
 
 

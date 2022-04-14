@@ -1,5 +1,6 @@
-import unittest
 import random
+import unittest
+
 import tlog
 
 

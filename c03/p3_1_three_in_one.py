@@ -71,7 +71,7 @@ class MultiStack:
             stack_info.capacity += 1
 
         idx = stack_info.last_capacity_idx()
-        while (stack_info.is_within_stack_capacity(idx)):
+        while stack_info.is_within_stack_capacity(idx):
             self.arr[idx] = self.arr[self.prev_idx(idx)]
             idx = self.prev_idx(idx)
 

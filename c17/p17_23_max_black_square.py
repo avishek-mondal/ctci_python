@@ -125,5 +125,3 @@ def is_square_naive(matrix, row, col, size):
             return False
 
     return True
-
-

@@ -74,6 +74,7 @@ class Box:
 
     def __lt__(self, other):
         return self.h < other.h and self.l < other.l and self.w < other.w
+
     def __eq__(self, other):
         return self.h == other.h and self.l == other.l and self.w == other.w
 
@@ -96,16 +97,18 @@ def test_two_conflicting_boxes():
 def test_two_stackable_boxes():
     assert create_stack([Box(3, 2, 1), Box(6, 5, 4)]) == 9
 
+
 class BoxesTest(unittest.TestCase):
     def test_boxes(self):
         test_cases = [
             ([Box(3, 2, 1), Box(6, 5, 4)], 9),
             ([Box(3, 2, 1), Box(5, 4, 1)], 5),
             ([Box(3, 2, 1)], 3),
-            ([], 0)
+            ([], 0),
         ]
         for boxes, expected in test_cases:
             self.assertEqual(create_stack(boxes), expected)
+
 
 if __name__ == "__main__":
     unittest.main()

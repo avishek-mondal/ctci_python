@@ -19,8 +19,9 @@ def sum_lists(ll1: LinkedList, ll2: LinkedList) -> LinkedList:
     return sum_list
 
 
-def sum_list_helper(ln1: LinkedListNode, ln2: LinkedListNode,
-                    carry: int) -> LinkedListNode:
+def sum_list_helper(
+    ln1: LinkedListNode, ln2: LinkedListNode, carry: int
+) -> LinkedListNode:
     if ln1 is None and ln2 is None and carry == 0:
         return None
     value = carry

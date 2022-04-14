@@ -1,7 +1,8 @@
-import tlog
-import typing as ty
 import heapq
+import typing as ty
 from collections import deque
+
+import tlog
 
 NOT_FOUND = -1
 

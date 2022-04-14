@@ -3,13 +3,14 @@ from structlog.stdlib import BoundLogger
 
 # tfl app logger - tlog
 
-_global_logger: BoundLogger = structlog.get_logger('root_tlog')
+_global_logger: BoundLogger = structlog.get_logger("root_tlog")
 
 
 def bind(**kwargs):
     """Bind the global logger to passed key-value pairs."""
     global _global_logger
     _global_logger = _global_logger.bind(**kwargs)
+
 
 def info(*args, **kwargs):
     """Log message with level INFO."""

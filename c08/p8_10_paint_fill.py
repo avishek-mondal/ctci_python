@@ -1,5 +1,5 @@
-import unittest
 import typing as ty
+import unittest
 
 
 def main():
@@ -57,5 +57,5 @@ class Test(unittest.TestCase):
                 assert f(screen, r, c, new_color) == expected
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

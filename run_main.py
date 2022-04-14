@@ -8,6 +8,8 @@ python run_main.py --main_filename p1_3_urlify
 or
 
 python run_main.py --main_filename p1_3_urlify.py
+
+Alternatively, use the breakpoint_on_error decorator
 """
 
 import argparse
@@ -19,30 +21,47 @@ import sys
 import traceback
 
 
+def breakpoint_on_error(fn):
+    def inner(*args, **kwargs):
+        try:
+            return fn(*args, **kwargs)
+        except Exception:
+            """Standard python way of creating a breakpoint on error"""
+            extype, value, tb = sys.exc_info()
+            print(f"extype={extype},\nvalue={value}")
+            traceback.print_exc()
+            pdb.post_mortem(tb)
+
+    return inner
+
+
 def parse_main_filename():
     pargs = argparse.ArgumentParser()
-    pargs.add_argument('--main_filename',
-                       help="the filename where the main function is",
-                       required=True)
+    pargs.add_argument(
+        "--main_filename",
+        help="the filename where the main function is",
+        required=True,
+    )
     args = pargs.parse_args()
     return args.main_filename
 
 
 def get_module(main_filename: str):
-    if '.py' not in main_filename:
+    if ".py" not in main_filename:
         main_filename = f"{main_filename}.py"
     dir = os.path.dirname(os.path.abspath(__file__))
     full_path = os.path.join(dir, main_filename)
-    module_name = main_filename.replace('.py', '')
+    module_name = main_filename.replace(".py", "")
     spec = importlib.util.spec_from_file_location(
-        module_name, full_path, submodule_search_locations=[])
+        module_name, full_path, submodule_search_locations=[]
+    )
     module = importlib.util.module_from_spec(spec)
     sys.modules[module_name] = module
     spec.loader.exec_module(module)
     return module
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main_filename = parse_main_filename()
     try:
         module = get_module(main_filename)
